@@ -120,10 +120,28 @@ Download latex-tikz codes from
 \begin{lstlisting}
 https://github.com/adhvik24/EE3900/blob/main/Assignment_1/Assignment_1.tex
 \end{lstlisting}
-\section{QUESTION 2.17.a}
-Give the magnitude and direction of the net force acting on a stone of mass 0.1 kg,just after it is dropped from the window of a stationary train.
+\section{Ramsey 1.1 qn 2(c)}
+Find the length of PQ for $\vec{P}=\myvec{a\\b}$ and $\vec{Q}=\myvec{-b\\a}$.
 \section{SOLUTION}
-As the train is stationary, the only force acting on the mass is gravitational force.\\
-The direction of net force is $\myvec{0\\-1\\0} $.\\
-And the magnitude of net force is $1$N.\\ \brak{\,Taking,\,\,g = 10ms^{-2}}
+Two point are P and Q. Let the distance between both points is d.
+\begin{align}
+    \vec{Z} = \vec{P} - \vec{Q}  
+\end{align}   
+Then the distance between P and Q is given by:
+\begin{align}
+   d &= \norm{\vec{Z}}\\
+   d &= \norm{\vec{P} - \vec{Q}}
+\end{align}
+And P-Q is,
+\begin{align}
+   Z = P - Q &= {\myvec{a\\b}-\myvec{-b\\a}}\\
+   \implies Z&= {\myvec{a+b\\b-a}}
+\end{align}
+So, the distance between given points P and Q is:
+\begin{align}
+   d &= \sqrt{(a-(-b))^2 + (b-a)^2}\\
+   d &= \sqrt{(a+b)^2 + (b-a)^2}\\
+   d &= \sqrt{2(a^2+b^2)}
+\end{align}
+$\therefore$ The length of PQ is $\sqrt{2(a^2+b^2)}$.
 \end{document}
