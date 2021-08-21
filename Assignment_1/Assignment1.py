@@ -108,6 +108,7 @@ import  shlex
 
 A = np.array([-5,12])
 B = np.array([9,-2])
+C = np.array([2,5])
 
 #finding ratio
 #C={kB+A}/{k+1}
@@ -129,14 +130,17 @@ plt.text(B[0] * (1 - 0.03), B[1] * (1 + 0.1) , 'B')
 #coodinates of points
 P = np.array([-8,-5])
 Q = np.array([7,10])
-C = np.array([2,5])
+R = np.array([-3,0])
 
 #finding ratio
 #C={kB+A}/{k+1}
-k=np.linalg.norm(P-C)/np.linalg.norm(C-Q)
+k1=np.linalg.norm(P-C)/np.linalg.norm(C-Q)
 print("ratio in which C divides PQ is")
-print(k)
+print(k1)
 
+k2=np.linalg.norm(P-R)/np.linalg.norm(R-Q)
+print("ratio in which R divides PQ is")
+print(k2)
 
 #Generating all lines
 x_PQ = line_gen(P,Q)
@@ -150,6 +154,8 @@ plt.plot(Q[0], Q[1], 'o')
 plt.text(Q[0] * (1 - 0.03), Q[1] * (1 + 0.1) , 'Q')
 plt.plot(C[0], C[1], 'o')
 plt.text(C[0] * (1 - 0.03), C[1] * (1 + 0.1) , 'C')
+plt.plot(R[0], R[1], 'o')
+plt.text(R[0] * (1 - 0.03), R[1] * (1 + 0.1) , 'R')
 
 
 
