@@ -120,28 +120,45 @@ Download latex-tikz codes from
 \begin{lstlisting}
 https://github.com/adhvik24/EE3900/blob/main/Assignment_1/Assignment_1.tex
 \end{lstlisting}
-\section{Ramsey 1.1 qn 2(c)}
-Find the length of PQ for $\vec{P}=\myvec{a\\b}$ and $\vec{Q}=\myvec{-b\\a}$.
+%
+Download python codes from 
+%
+\begin{lstlisting}
+https://github.com/adhvik24/EE3900/blob/main/Assignment_1/Assignment1.py
+\end{lstlisting}
+\section{Ramsey 1.1 qn 14}
+Prove that the middle point of the line joining the points $\myvec{-5\\12}$ and $\myvec{9\\-2}$ is a point of trisection of the line
+joining the points $\myvec{-8\\-5}$ and $\myvec{7\\10}$.
 \section{SOLUTION}
-Two point are P and Q. Let the distance between both points is d.
+The ${C}$ that divides ${A},{B}$ in the ratio $k:1$ is
 \begin{align}
-    \vec{Z} = \vec{P} - \vec{Q}  
-\end{align}   
-Then the distance between P and Q is given by:
-\begin{align}
-   d &= \norm{\vec{Z}}\\
-   d &= \norm{\vec{P} - \vec{Q}}
+{C}=\frac{k{B}+{A}}{k+1}\label{0}
 \end{align}
-And P-Q is,
+Let C is the middle point of the line joining the points A = $\myvec{-5\\12}$ and B = $\myvec{9\\-2}$, Then K=1,
 \begin{align}
-   Z = P - Q &= {\myvec{a\\b}-\myvec{-b\\a}}\\
-   \implies Z&= {\myvec{a+b\\b-a}}
+    {C}&=\frac{{B}+{A}}{1+1}=\frac{{B}+{A}}{2}\\
+    &= \frac{\myvec{9\\-2}+\myvec{-5\\12}}{2}\\
+    \implies {C}&= \myvec{2\\5}
 \end{align}
-So, the distance between given points P and Q is:
+And now we have to find the ratio in which C divides the line
+joining the points P = $\myvec{-8\\-5}$ and Q = $\myvec{7\\10}$. Let the ratio is $k:1$,
+Then,
 \begin{align}
-   d &= \sqrt{(a-(-b))^2 + (b-a)^2}\\
-   d &= \sqrt{(a+b)^2 + (b-a)^2}\\
-   d &= \sqrt{2(a^2+b^2)}
+    \implies {C}&=\frac{k{Q}+{P}}{k+1}\\
+    \myvec{2\\5} &= \frac{{K{\myvec{7\\10}+\myvec{-8\\-5}}}}{k+1}\\
+    \myvec{2\\5}&=\frac{1}{k+1} \myvec{7K-8\\10K-5}\\
+    \implies k &= 2
 \end{align}
-$\therefore$ The length of PQ is $\sqrt{2(a^2+b^2)}$.
+As $k=2$, That implies C divides the line
+joining the points P = $\myvec{-8\\-5}$ and Q = $\myvec{7\\10}$ in the ratio $2:1$.
+
+$\therefore$ C is point of trisection of line joining P and Q.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=\columnwidth]{a_1.png}
+\end{figure}
+
+$\therefore$ The middle point of the line joining the points $\myvec{-5\\12}$ and $\myvec{9\\-2}$ is a point of trisection of the line
+joining the points $\myvec{-8\\-5}$ and $\myvec{7\\10}$.
 \end{document}
