@@ -124,9 +124,9 @@ x_AB = line_gen(A,B)
 plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 
 plt.plot(A[0], A[1], 'o')
-plt.text(A[0] * (1 - 0.1), A[1] * (1 + 0.1) , 'A')
+plt.text(A[0] * (1 - 0.1), A[1] * (1 + 0.01) , 'A')
 plt.plot(B[0], B[1], 'o')
-plt.text(B[0] * (1 - 0.03), B[1] * (1 + 0.1) , 'B')
+plt.text(B[0] * (1 - 0.1), B[1] * (1 + 0.1) , 'B')
 #coodinates of points
 P = np.array([-8,-5])
 Q = np.array([7,10])
@@ -155,7 +155,7 @@ plt.text(Q[0] * (1 - 0.03), Q[1] * (1 + 0.1) , 'Q')
 plt.plot(C[0], C[1], 'o')
 plt.text(C[0] * (1 - 0.03), C[1] * (1 + 0.1) , 'C')
 plt.plot(R[0], R[1], 'o')
-plt.text(R[0] * (1 - 0.03), R[1] * (1 + 0.1) , 'R')
+plt.text(R[0] * (1 - 0.2), R[1] * (1 + 0.1) , 'R')
 
 
 
