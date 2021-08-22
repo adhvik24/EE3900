@@ -106,6 +106,10 @@ columns=fullflexible
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
 \numberwithin{equation}{subsection}
 \makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
 \vspace{3cm}
 \title{EE3900 Assignment - 1}
 \author{Adhvik Mani Sai Murarisetty - AI20BTECH11015}
@@ -114,7 +118,6 @@ columns=fullflexible
 \bigskip
 \renewcommand{\thetable}{\theenumi}
 
-%
 Download latex-tikz codes from 
 %
 \begin{lstlisting}
