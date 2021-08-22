@@ -6,7 +6,7 @@
 \usepackage[cmex10]{amsmath}
 
 \usepackage{amsthm}
-
+\usepackage{commath}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -17,6 +17,7 @@
 
 \usepackage{longtable}
 \usepackage{multirow}
+
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{steinmetz}
@@ -49,10 +50,10 @@
 
 \renewcommand\thesectiondis{\arabic{section}}
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
-\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{sub subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
 
 
-\hyphenation{optical networks semiconduc-tor}
+\hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
 \lstset{
@@ -61,8 +62,6 @@ frame=single,
 breaklines=true,
 columns=fullflexible
 }
-\date{March 2021}
-
 \begin{document}
 
 \newcommand{\BEQA}{\begin{eqnarray}}
@@ -74,8 +73,6 @@ columns=fullflexible
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
-\providecommand{\fn}[1]{\ensuremath{f\left({#1}\right)}}
-\providecommand{\e}[1]{\ensuremath{E\left(#1\right)}}
 \providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
 \providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
 \providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
@@ -88,13 +85,12 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
-\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
 \providecommand{\abs}[1]{\vert#1\vert}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
 \providecommand{\norm}[1]{\lVert#1\rVert}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
-\providecommand{\mean}[1]{E\sbrak{ #1 }}
+\providecommand{\mean}[1]{E[ #1 ]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
@@ -106,6 +102,16 @@ columns=fullflexible
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
 \numberwithin{equation}{subsection}
 \makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{EE3900 Assignment - 2}
 \author{Adhvik Mani Sai Murarisetty - AI20BTECH11015}
