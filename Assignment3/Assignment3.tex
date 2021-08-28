@@ -151,31 +151,46 @@ f &=\vec{u}^T\vec{u}-r^2  \label{3} \\
 \vec{c} &=-\vec{u} \label{4}
 \end{align}
 
-If $\vec{P}$ be a point on the line and $\vec{n}$ is the normal vector, the equation of the line can be expressed as
+
+
+
+Given the point of contact $\vec{q}$, the equation of a tangent to the circle is 
 \begin{align}
-    {\vec{n}}^T\brak{\vec{x}-\vec{P}}&=0\label{5}\\
-    \implies{\vec{n}}^T\vec{x}&= c
+\brak{\vec{V}\vec{q}+\vec{u}}^T\vec{x}+\vec{u}^T\vec{q}+f = 0
+\label{5}
 \end{align}
-Where,
+We know that, for a circle, 
 \begin{align}
-    c= {\vec{n}}^T\vec{P}
+\vec{V} = \vec{I}  
 \end{align}
+
+
+
+
+
+%If $\vec{P}$ be a point on the line and $\vec{n}$ is the normal vector, the %equation of the line can be expressed as
+%\begin{align}
+ %   {\vec{n}}^T\brak{\vec{x}-\vec{P}}&=0\label{5}\\
+  %  \implies{\vec{n}}^T\vec{x}&= c
+%\end{align}
+%Where,
+%\begin{align}
+%    c= {\vec{n}}^T\vec{P}
+%\end{align}
 
 
 
 We can rewrite \eqref{0} as $\vec{x}^T\vec{x} = 5$, And comparing \eqref{0} with \eqref{2}, we get
 \begin{align}
-    \vec{u}&=\myvec{0\\0}\\
+    \vec{u}&=\myvec{0\\0},\, \vec{q}= \myvec{1\\-2}\\
     \vec{f}&=-5
 \end{align}
 using \eqref{3} and \eqref{4} we will get center of circle as $\vec{c} = \myvec{0\\0}$ and $r= \sqrt{5}$.
 
 And now using \eqref{5}, we will get tangent at the point P(1,-2) as
 \begin{align}
-    \vec{n} =  \myvec{1\\-2}\text{ and }
-    P = \myvec{1\\-2}\\
-    \implies \myvec{1&-2}\brak{\vec{x}-\myvec{1\\-2}} &= 0\\
-    \implies \myvec{1&-2}\vec{x}&= 5
+    \brak{\vec{I}\myvec{1\\-2}+\myvec{0\\0}}^T\vec{x}+\myvec{0\\0}^T\myvec{1\\-2}+{-5} = 0\\
+    \implies \myvec{1&-2}\vec{x}= 5
 \end{align}
 
 
@@ -206,10 +221,6 @@ Comparing \eqref{a} with \eqref{b}
 \vec{q} = \vec{V}^{-1}\brak{\kappa \vec{n}-\vec{u}} 
 \\
 \kappa = \pm \sqrt{\frac{\vec{u}^T\vec{V}^{-1}\vec{u}-f}{\vec{n}^T\vec{V}^{-1}\vec{n}}} 
-\end{align}
-We know that, for a circle, 
-\begin{align}
-\vec{V} = \vec{I}  
 \end{align}
 and from the properties of an Identity matrix, 
 \begin{align}
