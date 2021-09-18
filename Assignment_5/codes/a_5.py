@@ -33,7 +33,6 @@ if D_vec[0] != 0:
 D = np.diag(D_vec)
 p = P[:,0]
 eta = 2*u@p
-
 foc = -eta/D_vec[1]
 
 x = parab_gen(y,foc)
@@ -60,6 +59,10 @@ d1 = d1/(2*a)
 d2 = d2/(2*a)
 print('The solutions of the equations are',d1,'and',d2)
 
+print('The corresponding eigenvalues of V are ',D_vec[0],'and ', D_vec[1])
+print('The corresponnding eigen vectors are ',np.array(P[:,0]),'and ',np.array(P[:,1]))
+print('The value of P is', np.array(P),)
+print('The value of c is ',10)
 plt.plot(d2,0, 'o')
 plt.text(d2,0.5, 'D')
 plt.plot(d1, 0, 'o')
