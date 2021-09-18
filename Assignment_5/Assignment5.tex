@@ -167,23 +167,40 @@ If we take $A = 1$ , we have :
 
 The given equation can be written as,
 \begin{align}
-    \vec{x}^T\myvec{1 & 0 \\ 0 & 0}\vec{x} + \myvec{7 & 0}\vec{x} + 10 = 0 \label{eq:2}
+    \vec{x}^T\myvec{1 & 0 \\ 0 & 0}\vec{x} + 2\myvec{\frac{7}{2} & -\frac{1}{2}}\vec{x} + 10 &= 0  \label{eq:2}
 \end{align}
 where,
 \begin{align}
-    \vec{x} = \myvec{x \\ 0} \label{eq:3}
+    \vec{x} = \myvec{x \\ y} \label{eq:3}
 \end{align}
 Substituting \eqref{eq:3} in \eqref{eq:2},
 \begin{align}
-    \myvec{x \\ 0}^T\myvec{1 & 0 \\ 0 & 0}\myvec{x \\ 0} + \myvec{7 & 0}\myvec{x \\ 0} + 10 &= 0 
+    \myvec{x \\ y}^T\myvec{1 & 0 \\ 0 & 0}\myvec{x \\ y} + 2\myvec{\frac{7}{2} & -\frac{1}{2}}\myvec{x \\ y} + 10 &= 0 
 \end{align}
 \begin{align}
-    \implies x^2 + 7x + 10 &= 0\\
+    \implies &\vec{V} = \myvec{1&0\\0&0},\; \vec{u} = \myvec{\frac{7}{2}\\-\frac{1}{2}},\; f = 10
+\end{align}
+For obtaining the affine transformation, we use 
+\begin{equation}
+    \vec{x} = \vec{P}\vec{y}+\vec{c}
+\end{equation}
+The corresponding eigenvalues of $\vec{V}$ are
+\begin{align}
+    \lambda_1 = 0,\; \lambda_2 = 1\\
+    \implies \vec{D} = \myvec{0&0\\0&1}
+\end{align}
+The corresponding eigen vectors are
+\begin{align}
+    &\vec{p}_1 = \myvec{0\\1},\; \vec{p}_2 = \myvec{1\\0}\\
+    \implies &\vec{P} = \myvec{\vec{p}_1 & \vec{p}_2} = \myvec{0&1\\1&0}\text{and c= 10}
+\end{align}
+Solving the equation,
+\begin{align}
+ x^2 + 7x + 10 &= 0\\
     \implies \brak{x + \frac{7}{2}}^2 &= \frac{9}{4}\\
     \implies \brak{x + \frac{7}{2}} &= \pm\frac{3}{2}\label{eq:4}\\
     \implies x  &= -2,-5\label{eq:5}
 \end{align}
-
 Verifying the relationship between the zeroes and coefficients. By comparing \eqref{eq:2} with \eqref{eq:1},
 \begin{align}
     \implies \text{sum of the zeroes} = -7 = -D\\
@@ -191,6 +208,7 @@ Verifying the relationship between the zeroes and coefficients. By comparing \eq
 \end{align}
 
 $\therefore$ The zeroes of equation $x^2+7x+10$ are -2, -5.
+
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{a_5_final.png}
