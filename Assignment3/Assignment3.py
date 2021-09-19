@@ -11,7 +11,10 @@ def circ_gen(O,r):
 	x_circ[1,:] = r*np.sin(theta)
 	x_circ = (x_circ.T + O).T
 	return x_circ
-
+u1 = np.array([0,0])
+f1 = -5
+u2 = np.array(([-4,3]))
+f2 = 20
 #Generate line points
 def line_gen(A,B):
   len =10
@@ -24,16 +27,21 @@ def line_gen(A,B):
   return x_AB
 
 #Input parameters
-C1 = np.array(([0,0]))
-C2 = np.array(([4,-3]))
+# centre of circles
+C1 = -u1
+C2 = -u2
+# radius of circles
+r1 = np.sqrt(((u1.T)@u1)-f1)
+r2 = np.sqrt(((u2.T)@u2)-f2)
+
+#points on the line.
 A = np.array(([8,1.5]))
 B = np.array(([-4, -4.5]))
-r = np.sqrt(5)
 
 #Plotting the circles
-x_circ1= circ_gen(C1,r)
+x_circ1= circ_gen(C1,r1)
 plt.plot(x_circ1[0,:],x_circ1[1,:],label = '$||x||^2 = 5$')
-x_circ2= circ_gen(C2,r)
+x_circ2= circ_gen(C2,r2)
 plt.plot(x_circ2[0,:],x_circ2[1,:],label = '$  x^Tx-(-8 , 6)x+20 = 0$')
 
 
