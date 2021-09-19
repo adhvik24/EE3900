@@ -42,7 +42,7 @@ B = np.array(([-4, -4.5]))
 x_circ1= circ_gen(C1,r1)
 plt.plot(x_circ1[0,:],x_circ1[1,:],label = '$||x||^2 = 5$')
 x_circ2= circ_gen(C2,r2)
-plt.plot(x_circ2[0,:],x_circ2[1,:],label = '$  x^Tx-(-8 , 6)x+20 = 0$')
+plt.plot(x_circ2[0,:],x_circ2[1,:],label = '$  x^Tx+(-8 , 6)x+20 = 0$')
 
 
 
