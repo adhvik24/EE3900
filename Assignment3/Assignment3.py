@@ -11,23 +11,17 @@ def circ_gen(O,r):
 	x_circ[1,:] = r*np.sin(theta)
 	x_circ = (x_circ.T + O).T
 	return x_circ
+
 u1 = np.array([0,0])
 f1 = -5
 u2 = np.array(([-4,3]))
 f2 = 20
-#Generate line points
-def line_gen(A,B):
-  len =10
-  dim = A.shape[0]
-  x_AB = np.zeros((dim,len))
-  lam_1 = np.linspace(0,1,len)
-  for i in range(len):
-    temp1 = A + lam_1[i]*(B-A)
-    x_AB[:,i]= temp1.T
-  return x_AB
+
 
 #Input parameters
 # centre of circles
+V = np.array([[1,0],[0,1]])
+
 C1 = -u1
 C2 = -u2
 # radius of circles
@@ -44,15 +38,17 @@ plt.plot(x_circ1[0,:],x_circ1[1,:],label = '$||x||^2 = 5$')
 x_circ2= circ_gen(C2,r2)
 plt.plot(x_circ2[0,:],x_circ2[1,:],label = '$  x^Tx+(-8 , 6)x+20 = 0$')
 
+n = np.array([1,-2])
+u = np.array([-4,3])
 
+k = -np.sqrt(((np.matmul(np.matmul(u.T,np.linalg.inv(V)),u))-f2)/(np.matmul(np.matmul(n.T,np.linalg.inv(V)),n)))
+print('The value of k is ',k)
+q = np.matmul(np.linalg.inv(V) , (k*n-u)  )
+print('The value of q is ',q)
 
-#Plotting the lines
-
-x_AB = line_gen(A,B)
-
-#Plotting all lines
-plt.plot(x_AB[0,:],x_AB[1,:],label='$x-2y=5 $')
-
+x1=np.linspace(-4,9)
+y1=(x1*0.5-2.5)
+plt.plot(x1, y1, '-', label='$x-2y=5 $',color='g')
 
 A = np.array(([0,0]))
 B = np.array(([4,-3]))
