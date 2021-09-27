@@ -28,10 +28,6 @@ C2 = -u2
 r1 = np.sqrt(((u1.T)@u1)-f1)
 r2 = np.sqrt(((u2.T)@u2)-f2)
 
-#points on the line.
-A = np.array(([8,1.5]))
-B = np.array(([-4, -4.5]))
-
 #Plotting the circles
 x_circ1= circ_gen(C1,r1)
 plt.plot(x_circ1[0,:],x_circ1[1,:],label = '$||x||^2 = 5$')
