@@ -142,6 +142,22 @@ Find the zeroes of the quadratic polynomial
 $x^2+7x+10$ and verify the relationship between
 the zeroes and the coefficients.
 \section{Solution}
+\begin{lemma}\label{l1}
+The points of intersection of line \\L:$\vec{x}=\vec{q}+\mu \vec{m}$ with the conic 
+\begin{align}
+\vec{x}^\top\vec{V}\vec{x}+2\vec{u}^\top\vec{x}+f=0
+\end{align}
+are given by 
+\begin{align}  
+\vec{x_{i}}=\vec{q}+\mu_{i}\vec{m}
+\end{align}
+where 
+\begin{multline}
+    \mu_i=\frac{1}{\vec{m}^\top\vec{V}\vec{m}}-\vec{m}^\top\brak{\vec{V}\vec{q}+\vec{u}}\\ \pm\sqrt{[\vec{m}^\top(\vec{V}\vec{q}+\vec{u})]-(\vec{q}^\top\vec{V}\vec{q}+2\vec{u}^\top\vec{q}+f)(\vec{m}^\top\vec{V}\vec{m})}
+\end{multline}
+
+\end{lemma}
+
 \begin{lemma}
 A general polynomial equation $p(x,y)$ of degree 2 is given by :
 \begin{align}
@@ -173,18 +189,35 @@ Let $y = x^2+7x+10 = 0$. \\Then, $y$ can be represented in the vector form as:
 \end{align}
 where 
 \begin{align}
-    \vec{x} = \myvec{x\\0}
+    \vec{x} = \myvec{x\\y}
 \end{align}
-Subsituting $y = 0$, we get:
+
+Roots of the given equation is intersection of the parabola with x-axis.
+And the equation of x-axis is
 \begin{align}
-     \myvec{x \\ 0}^T\myvec{1 & 0 \\ 0 & 0}\myvec{x \\ 0} + 2\myvec{\frac{7}{2} & -\frac{1}{2}}\myvec{x \\ 0} + 10 &= 0
+    \vec{x}=\mu\myvec{1\\0}
 \end{align}
+
+Then using lemma \ref{l1}, The point of intersections are,
 \begin{align}
-    \implies x^2 + 7x + 10 &= 0\\
-    \implies \brak{x + \frac{7}{2}}^2 &= \frac{9}{4}\\
-    \implies \brak{x + \frac{7}{2}} &= \pm\frac{3}{2}\label{eq:4}\\
-    \implies x  &= -2,-5\label{eq:5}
+    \vec{x_i}&=\vec{q}+\mu_i\vec{m}\\
+             &=\mu_i\myvec{1\\ 0}
 \end{align}
+where 
+\begin{align}
+    \mu_i = -2, -5
+\end{align}
+
+%Subsituting $y = 0$, we get:
+%\begin{align}
+ %    \myvec{x \\ 0}^T\myvec{1 & 0 \\ 0 & 0}\myvec{x \\ 0} + 2\myvec{\frac{7}{2} %& -\frac{1}{2}}\myvec{x \\ 0} + 10 &= 0
+%\end{align}
+%\begin{align}
+ %   \implies x^2 + 7x + 10 &= 0\\
+  %  \implies \brak{x + \frac{7}{2}}^2 &= \frac{9}{4}\\
+   % \implies \brak{x + \frac{7}{2}} &= \pm\frac{3}{2}\label{eq:4}\\
+   % \implies x  &= -2,-5\label{eq:5}
+%\end{align}
 Clearly, for two values of $x$ would we get the value of this expression to be $0$, and hence, this equation has two real roots.\\
 The roots can be verified using the python code. As we can see from the graph, $x^2+7x+10$ intersect the x-axis at ${\myvec{-2\\0}\text{ and }\myvec{-5\\0}}$.\\
 \textbf{Affine Transformation}
@@ -231,4 +264,7 @@ $\therefore$ The zeroes of equation $x^2+7x+10$ are -2, -5.
     \caption{Quadratic polynomial $x^2+7x+10$}
     \label{fig:my_label}
 \end{figure}
+
+
+
 \end{document}
