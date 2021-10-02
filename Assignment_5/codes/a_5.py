@@ -20,9 +20,23 @@ def line_dir_pt(m,A,k1,k2):
     x_AB[:,i]= temp1.T
   return x_AB
 
+
+
+
+# calculation of mu.
+m1=np.array([1,0]).T
+
+V=np.array([[1,0],[0,0]])
+u=np.array([7/2,0]).T
+f = 10
+q=np.array([0,0]).T
+mu_a_1=(-m1.T@(V@q+u)+np.sqrt((m1.T@(V@q+u))**2-((q.T@V@q+2*u.T@q+f)*(m1.T@V@m1))))*(1/((m1.T)@V@m1))
+mu_a_2=(-m1.T@(V@q+u)-np.sqrt((m1.T@(V@q+u))**2-((q.T@V@q+2*u.T@q+f)*(m1.T@V@m1))))*(1/((m1.T)@V@m1))
+print('Possible values of mu:',mu_a_1,'and ',mu_a_2)    
+
+# affine transformation.
 V = np.array(([1,0],[0,0]))
 u = np.array(([7/2,-1/2]))
-f = 10
 
 D_vec,P = LA.eig(V)
 if D_vec[0] != 0:
