@@ -1,7 +1,8 @@
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.fft import fft
-
+from matplotlib.pylab import rcParams
+rcParams['figure.figsize'] = 6, 3
 
 N = 500
 x = np.linspace(-5,5, N)
@@ -56,3 +57,19 @@ plt.ylabel('$X(f)$')
 plt.grid()
 plt.legend()
 plt.show()
+#"""
+fig, ax = plt.subplots(2,1)
+#Plotting the signals of amplitude
+ax[0].plot(x, np.absolute(y_fourier2), label="$Y(f)$")
+ax[0].set_ylabel("$A$")
+ax[0].legend(loc = "best")
+ax[0].grid()
+plt.xlabel("$f$")
+#Plotting the phase
+ax[1].plot(x, np.angle(y_fourier2), label="$Y(f)$")
+plt.xlabel("$f$")
+ax[1].set_ylabel("$\phi$")
+ax[1].legend(loc = "best")
+ax[1].grid()
+plt.show()
+#"""
