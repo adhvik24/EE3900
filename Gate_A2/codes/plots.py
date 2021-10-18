@@ -9,6 +9,12 @@ def x1(t):
 def x2(t):
     return t
 
+def x3(t):
+    return t**2
+
+def y3 (t): 
+    return abs(hilbert(x3(t)))
+
 def y1 (t): 
     return abs(hilbert(x1(t)))
     
@@ -62,4 +68,22 @@ plt.plot(t , abs(hilbert(x1(t-2))), 'k--' , label = "System acting on $x_1(t-t_0
 plt.legend(loc = 'upper right')
 plt.grid(True)
 plt.title("Time Invariance")
+plt.show()
+
+
+
+# Plotting input signals
+t = np.linspace(-3 , 3, 100000)
+t1 = np.linspace(-10 , 10, 100000)
+plt.plot(t, x3(t1) , 'r', label = "$x_3(t) = t^2$")
+plt.grid(True)
+plt.legend(loc = 'upper right')
+plt.title("Input signals")
+plt.show()
+
+# Plotting output signals
+plt.plot(t , y3(t) , 'r', label = "$\hat{x_3}(t)$")
+plt.legend(loc = 'upper right')
+plt.grid(True)
+plt.title("Output Signals")
 plt.show()
