@@ -60,13 +60,15 @@ plt.show()
 #"""
 fig, ax = plt.subplots(2,1)
 #Plotting the signals of amplitude
-ax[0].plot(x, np.absolute(y_fourier2), label="$Y(f)$")
+ax[0].plot(x, np.absolute(y_fourier2), label="$Simulation$")
+ax[0].plot(x, np.absolute(y_theoretical2), label="$Theoretical$")
 ax[0].set_ylabel("$A$")
 ax[0].legend(loc = "best")
 ax[0].grid()
 plt.xlabel("$f$")
 #Plotting the phase
-ax[1].plot(x, np.angle(y_fourier2), label="$Y(f)$")
+ax[1].plot(x, np.angle(y_fourier2), label="$Simulation$")
+ax[1].plot(x, np.angle(y_theoretical2), label="$Theoretical$")
 plt.xlabel("$f$")
 ax[1].set_ylabel("$\phi$")
 ax[1].legend(loc = "best")
