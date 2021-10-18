@@ -159,7 +159,7 @@ We say that a system is\textbf{ linear} if and only if it follows the Principle 
 
 \begin{definition}
 A system is said to be \textbf{casual} if and only if its output is independent of the future value of the input. So, A casual system output depends only on the past and present values of th system.
-That implies \textbf{the impulse response h(t) should be non zero, $h(t)\ne0$ for $t<0$ for a non casual system}. \label{def}
+That implies, \textbf{For a non casual system the impulse response h(t) should be non zero i.e., $h(t)\ne0$ for $t<0$}. \label{def}
 \end{definition}
 
 \begin{definition}
@@ -167,8 +167,12 @@ A system is said to be \textbf{time invariant} if the output signal does not dep
 \label{T}
 \end{definition}
 
+\begin{definition}
+A system is said to be \textbf{low-pass} if it filter the signals with a frequency lower than a selected cutoff frequency and attenuates signals with frequencies higher than the cutoff frequency. \label{newdef}
+\end{definition}
+
 \begin{lemma}
-A Hilbert transformer is a non-causal linear time-invariant filter.
+A Hilbert transformer is a non-causal, linear, time-invariant and non low-pass filter.
 \begin{align}
      \hat{x}(t)= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k)}{t-k} dk
 \end{align}
@@ -221,6 +225,7 @@ Since both the Laws hold, the system satisfies the Principle of Superposition, a
 \centering
  \includegraphics[width=\columnwidth]{2.png}
  \caption{$\hat{x_1}(t)$ and $\hat{x_2}(t)$}
+ \label{fig2}
  \end{figure}
  
   \begin{figure}[!htp]
@@ -297,6 +302,29 @@ Using \eqref{def}, That implies Hilbert transform is non casual system.
  \end{figure}
  
 $\therefore$ Hilbert transformer is a non casual system.
+
+
+\item {\textbf{\underline{Low-pass system}}}
+
+Using \eqref{newdef} and by observing the Fig.\ref{figx3}, We can observe that the output signal consists of signal component corresponds to all frequencies i.e., there is no such cutoff frequency observed. 
+
+  \begin{figure}[!htp]
+\centering
+ \includegraphics[width=\columnwidth]{x_31.png}
+ \caption{Input signal $x_3(t)=t^2$}
+ \end{figure}
+ 
+  \begin{figure}[!htp]
+\centering
+ \includegraphics[width=\columnwidth]{x_32.png}
+ \caption{Output signal $\hat{x_3}(t)$}
+ \label{figx3}
+ \end{figure}
+
+\newpage
+$\therefore$ We can say that the hilbert transform is \textbf{not a low-pass system}.
 \end{enumerate}
+
+$\therefore$ Correct option is \textbf{2) Non casual system}.
 \end{proof}
 \end{document}
