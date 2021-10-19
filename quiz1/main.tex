@@ -196,6 +196,57 @@ Then the frequency response of the system is,
     H\brak{e^{j\omega}}&=\frac{Y\brak{e^{j\omega}}}{X\brak{e^{j\omega}}}\\
     &=2
 \end{align}
+$\implies$ As, the frequency response is constant we will get the output signal as th scaled version of the input signal. Here the relation will be like,
+\begin{align}
+    y[n]=2x[n]
+\end{align}
+
+Thus we can say that the system is a LTI system. 
+
+\underline{\textbf{PROOF:}}
+\begin{definition}{\textbf{Linear}}
+The response to an arbitary linear combination of input signals is always the same linear combinations of the individual responses to these signals 
+\end{definition}
+\begin{align}
+    x_{1}[n] \implies y_{1}[n]= 2x_{1}[n]\\
+    x_{2}[n] \implies y_{2}[n]= 2x_{2}[n]
+\end{align}
+\begin{align}
+    ax_{1}[n]+bx_{2}[n] \implies 2\brak{ax_{1}[n]+bx_{2}[n]}\\
+    \therefore ax_{1}[n]+bx_{2}[n] \implies ay_{1}[n]+by_{2}[n]
+\end{align}
+As this system obeys both law of addition and law of homogenity, the given system is linear.
+\begin{definition}{\textbf{Time Invariant}}
+The response to an arbitrary translated set of inputs is always the response to the original set, but translated by the same amount.\\
+If 
+\begin{align}
+    x[n]\implies y[n]
+\end{align}
+then
+\begin{align}
+    x[n-n_{0}] \implies y[n-n_{0}]
+\end{align} for all x and $n_{0}$.
+\end{definition}
+Here 
+\begin{align}
+    x[n]\implies y[n]=2x[n]
+\end{align}
+adding time delay($n_{0}$) to the output signal
+\begin{align}
+\label{eq1}
+    2x[n]\implies 2x[(n-n_{0})]
+\end{align}
+adding time delay($n_{0}$) to the input signal 
+\begin{align}
+    x[n]\implies x[n-n_{0}]
+\end{align}
+Now the ouput signal 
+\begin{align}
+\label{eq2}
+    x[n-n_{0}]\implies 2x[n-n_{0}]
+\end{align}
+As \ref{eq1} and \ref{eq2} are same, the given signal is time invariant. 
+
 $\implies$ The system is a LTI system and it is unique.
 
 \begin{figure}[!htp]
