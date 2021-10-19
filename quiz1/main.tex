@@ -177,6 +177,36 @@ The output signal y[n] is,
 \begin{align}
     y[n]=2e^{\frac{jn}{8}}u[n]\label{1}
 \end{align}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{1.PNG}
+    \caption{Amplitude of x[n]}
+    \label{f1}
+\end{figure}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{2.PNG}
+    \caption{Phase of x[n]}
+    \label{f2}
+\end{figure}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{3.PNG}
+    \caption{Amplitude of y[n]}
+    \label{f3}
+\end{figure}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{4.PNG}
+    \caption{Phase of y[n]}
+    \label{f4}
+\end{figure}
+
+
 Then the fourier transform of x[n] is,
 \begin{align}
     X\brak{e^{j\omega}}&=\sum\limits_{n=-\infty}^{n=\infty}x[n]e^{-j\omega n}\\
@@ -216,6 +246,30 @@ The response to an arbitary linear combination of input signals is always the sa
     \therefore ax_{1}[n]+bx_{2}[n] \implies ay_{1}[n]+by_{2}[n]
 \end{align}
 As this system obeys both law of addition and law of homogenity, the given system is linear.
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{a.PNG}
+    \caption{Example inputs}
+    \label{f11}
+\end{figure}
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{b.PNG}
+    \caption{Outputs for example inputs}
+    \label{f21}
+\end{figure}
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{c.PNG}
+    \caption{Law of additivity}
+    \label{f31}
+\end{figure}
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width = \columnwidth]{d.PNG}
+    \caption{Law of homogenity}
+    \label{f41}
+\end{figure}
 \begin{definition}{\textbf{Time Invariant}}
 The response to an arbitrary translated set of inputs is always the response to the original set, but translated by the same amount.\\
 If 
@@ -247,34 +301,13 @@ Now the ouput signal
 \end{align}
 As \ref{eq1} and \ref{eq2} are same, the given signal is time invariant. 
 
-$\implies$ The system is a LTI system and it is unique.
-
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width = \columnwidth]{1.PNG}
-    \caption{Amplitude of x[n]}
-    \label{f1}
+    \includegraphics[width = \columnwidth]{e.PNG}
+    \caption{Time invariant}
+    \label{f51}
 \end{figure}
 
-\begin{figure}[!htp]
-    \centering
-    \includegraphics[width = \columnwidth]{2.PNG}
-    \caption{Phase of x[n]}
-    \label{f2}
-\end{figure}
-
-\begin{figure}[!htp]
-    \centering
-    \includegraphics[width = \columnwidth]{3.PNG}
-    \caption{Amplitude of y[n]}
-    \label{f3}
-\end{figure}
-
-\begin{figure}[!htp]
-    \centering
-    \includegraphics[width = \columnwidth]{4.PNG}
-    \caption{Phase of y[n]}
-    \label{f4}
-\end{figure}
+$\implies$ The system is a \textbf{LTI system }and it is \textbf{unique}.\textbf{ Also verified in python}.
 
 \end{document}
