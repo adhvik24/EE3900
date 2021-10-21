@@ -251,15 +251,16 @@ Now, we consider an input signal with a delay of $t_0$, given by $x(t-t_0)$, and
     &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(u-t_0)}{t-u} du\label{01}
 \end{align}
 
-We can rewrite $\hat{x}(t)$,
+Now, Delay the input signal and apply the system, then 
+We can write $\hat{x}_1(t)$,
 \begin{align}
-   \nonumber \hat{x}(t)&= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k)}{t-k} dk\\
+   \nonumber \hat{x}_1(t)
     &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k-t_0)}{t-k} dk\label{00}
 \end{align}
 
 Using \eqref{00} in \eqref{01},
 \begin{align}
-    \hat{x}(t-t_0) =\hat{x}(t) 
+    \hat{x}(t-t_0) =\hat{x}_1(t) 
 \end{align}
 
 Thus, the system is \textbf{time-invariant}.\\
