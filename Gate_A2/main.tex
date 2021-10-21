@@ -149,7 +149,7 @@ A Hilbert transformer is a
 \begin{definition}
 The Hilbert transform $\mathcal{H}(x(t))$ of a signal x(t) is defined as
 \begin{align}
-    \hat{x}(t)=\mathcal{H}(x(t))= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k)}{t-k} dk
+    \hat{x}(t)=\mathcal{H}(x(t))= \brak{\frac{1}{\pi t}}\ast x(t)
 \end{align}
 \end{definition}
 \begin{definition}
@@ -174,7 +174,7 @@ A system is said to be \textbf{low-pass} if it filter the signals with a frequen
 \begin{lemma}
 A Hilbert transformer is a non-causal, linear, time-invariant and non low-pass filter.
 \begin{align}
-     \hat{x}(t)= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k)}{t-k} dk
+     \hat{x}(t)= \brak{\frac{1}{\pi t}}\ast x(t)
 \end{align}
 \end{lemma}
 \begin{proof}
@@ -184,15 +184,16 @@ From \eqref{L}, we can say the system is linear if it follows both the laws of A
 \underline{Law of Additivity:}\\
 Let the two input signals be $x_1(t)$ and $x_2(t)$, and their corresponding output signals be $y_1(t)$ and $y_2(t)$, then:
 \begin{align}
-    \hat{x_1}(t)&= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x_1(k)}{t-k} dk\\
-    \hat{x_2}(t)&= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x_2(k)}{t-k} dk\\
-    \nonumber\hat{x_1}(t)+\hat{x_2}(t) &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x_1(k)}{t-k} dk+\frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x_1(k)}{t-k} dk\\
-    \hat{x_1}(t)+\hat{x_2}(t) &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x_1(k)+x_2(k)}{t-k} dk
+    \hat{x_1}(t)&= \brak{\frac{1}{\pi t}}\ast x_1(t)\\
+    \hat{x_2}(t)&= \brak{\frac{1}{\pi t}}\ast x_2(t)\\
+    \nonumber\hat{x_1}(t)+\hat{x_2}(t) &= \brak{\frac{1}{\pi t}}\ast x_1(t)+\brak{\frac{1}{\pi t}}\ast x_2(t)\\
+    \hat{x_1}(t)+\hat{x_2}(t) &= \brak{\frac{1}{\pi t}}\ast \brak{x_1(t)+x_2(t)}
     \label{1}
 \end{align}
-Now, consider the input signal of $x_1(t) + x_2(t)$, then the corresponding output signal is given by $\hat{x}(t)$:
+Now, consider the input signal of $x(t)=x_1(t) + x_2(t)$, then the corresponding output signal is given by $\hat{x}(t)$:
 \begin{align}
-    \hat{x}(t) = \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x_1(k)+x_2(k)}{t-k} dk
+    \hat{x}(t) &= \brak{\frac{1}{\pi t}}\ast \brak{x(t)}\\
+    \implies\hat{x}(t) &=\brak{\frac{1}{\pi t}}\ast \brak{x_1(t)+x_2(t)}
     \label{2}
 \end{align}
 Clearly, from \eqref{1} and \eqref{2}:
@@ -203,8 +204,8 @@ Thus, the Law of Additivity holds.\\
 \underline{Law of Homogeneity: }\\
 Consider an input signal $cx(t)$, where $k$ is any constant. Let the corresponding output be given by $\hat{x}(t)$, then:
 \begin{align}
-    \hat{x_1}(t) &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{cx(k)}{t-k} dk\\
-    &= c\frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k)}{t-k} dk\\
+    \hat{x_1}(t) &= \brak{\frac{1}{\pi t}}\ast (cx(t))\\
+    &= c\brak{\frac{1}{\pi t}}\ast x(t)\\
      &= c\hat{x}(t)
      \label{3}
 \end{align}
