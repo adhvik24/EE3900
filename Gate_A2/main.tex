@@ -273,9 +273,9 @@ $\therefore$ The hilbert transformer is a \textbf{linear time invariant system(L
 \item {\textbf{\underline{Impulse response and non casual system}}}\\
 Since the given system is an LTI system, it would possess an impulse response $h(t)$, which is the output of the system when the input signal is the Impulse function, given by $\delta(t)$. Thus,
 \begin{align}
-    h(t) = \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{\delta(k)}{t-k} dk\label{10}
+    h(t) =\brak{\frac{1}{\pi t}}\ast \brak{\delta(t)}\label{10}
 \end{align}
-The Impulse function can be loosely defined as:
+Where $\delta(t)$ is defined as:
 \begin{align}
 \nonumber    \delta(t) = 
     \begin{cases}
@@ -284,8 +284,9 @@ The Impulse function can be loosely defined as:
 \end{cases}
 and \int_{-\infty}^\infty \delta(t)dt  = 1
 \end{align}
+We know that,
 \begin{align}
-\int\limits_{-a}^{a} f(x)\delta(x-a) dx = f(a)\label{11}
+{x(t)}\ast {\delta(t)}=x(t)\label{11}
 \end{align}
 By using \eqref{11} in \eqref{10},
 \begin{align}
