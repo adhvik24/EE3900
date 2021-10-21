@@ -246,16 +246,14 @@ Since both the Laws hold, the system satisfies the Principle of Superposition, a
 From \eqref{T} , to check for time-invariance, we would introduce a delay of $t_0$ in the output and input signals.\\
 Now, we consider an input signal with a delay of $t_0$, given by $x(t-t_0)$, and let the corresponding output signal be given by $\hat{x}(t-t_0)$, then:
 \begin{align}
-    \hat{x}(t-t_0) &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k)}{t-t_0-k} dk\label{4}\\
-    &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(u-t_0)}{t-t_0-(u-t_0)} du\\
-    &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(u-t_0)}{t-u} du\label{01}
+    \hat{x}(t-t_0) &=\brak{\frac{1}{\pi (t-t_0)}}\ast x(t-t_0)\label{01}
 \end{align}
 
 Now, Delay the input signal and apply the system, then 
 We can write $\hat{x}_1(t)$,
 \begin{align}
-   \nonumber \hat{x}_1(t)
-    &= \frac{1}{\pi}\int\limits_{-\infty}^{\infty}\frac{x(k-t_0)}{t-k} dk\label{00}
+\hat{x}_1(t)
+    &= \brak{\frac{1}{\pi (t-t_0)}}\ast x(t-t_0)\label{00}
 \end{align}
 
 Using \eqref{00} in \eqref{01},
