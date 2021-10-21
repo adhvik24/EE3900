@@ -1,35 +1,32 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import matplotlib.lines as mlines
 
-def u(x):
-    res = []
-    for i in range(len(x)):
-        if x[i] >=0 :
-            res.append(1)
-        else:
-            res.append(0)
-    return res
+fig, ax = plt.subplots(figsize = (6,6))
 
+ax.set_xlim([-3,3])
+ax.set_ylim([-3,3])
 
+pole, = plt.plot(-1,0, 'rx',label = 'Poles')
+zero, = plt.plot(1,0, 'ro',label = 'Zeros')
 
-n, radii = 50, [1]
-pole1 = [-1,0]
-zero = [1,0]
+legend = plt.legend(handles =[pole,zero], loc = 'lower right')
+fig.gca().add_artist(legend)
 
-theta = np.linspace(0, 2*np.pi, n, endpoint=True)
-xs = np.outer(radii, np.cos(theta))
-ys = np.outer(radii, np.sin(theta))
+circle = plt.Circle([0,0],1,color = 'w')
+fig.gca().add_artist(circle)
 
-# in order to have a closed area, the circles
-# should be traversed in opposite directions
-xs[0,:] = xs[0,::-1]
-ys[0,:] = ys[0,::-1]
+circle = plt.Circle([0,0],1,edgecolor = 'black',fill = 0,linestyle = '--')
+fig.gca().add_artist(circle)
 
-ax = plt.subplot(111, aspect='equal')
-plt.plot(np.sin(theta), np.cos(theta) , 'k-' , label = "Unit Circle: $|z| = 1$")
-plt.plot([pole1[0]] , [pole1[1]] , 'rx' , label = "Poles of $H(z)$")
-plt.plot(zero[0],zero[1] , 'ro' , label = "Zeroes of $H(z)$")
+patches = mpatches.Patch(color="green", label="ROC")
+dotted_line = mlines.Line2D([],[],color = 'black',label='Unit circle')
+dotted_line.set_linestyle('--')
+plt.legend(handles=[patches,dotted_line], loc = 'upper right')
+ax.set_facecolor('xkcd:green')
 plt.title("Pole-Zero Plot with ROC")
-plt.grid(True)
-plt.legend(loc='upper right',fontsize=9)
+plt.grid()
+plt.xlabel("Re")
+plt.ylabel("Im")
 plt.show()
