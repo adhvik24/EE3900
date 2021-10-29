@@ -37,3 +37,36 @@ plt.plot(freq, np.angle(fourier))
 plt.xlabel('$f$')
 plt.ylabel('$\phi$')
 plt.show()
+import numpy as np
+from matplotlib import pyplot as plt
+from scipy.fft import fft
+from matplotlib.pylab import rcParams
+rcParams['figure.figsize'] = 6, 3
+
+N = 500
+x = np.linspace(-80,80, N)
+
+def sgn(t):
+    y = np.zeros(N)
+    for i in range(N):
+        if t[i] > 0:
+            y[i] = 1
+        if t[i] == 0:
+            y[i] = 0
+        if t[i] < 0:
+            y[i] = -1
+    return y
+#Computing the rectangular function
+y1 = sgn(x)/1j
+
+plt.plot(x, np.abs(y1))
+plt.xlabel('$t$')
+plt.ylabel('$A$')
+plt.grid()
+plt.show()
+
+plt.plot(x, np.angle(y1))
+plt.xlabel('$t$')
+plt.ylabel('$\phi$')
+plt.grid()
+plt.show()
