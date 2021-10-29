@@ -121,6 +121,7 @@ Download latex-tikz and python codes from
 https://github.com/adhvik24/EE3900/blob/main/Gate_A1
 \end{lstlisting}
 
+
 \section{Gate EC 2018 Qn 54}
 A band limited low-pass signal x(t) of bandwidth 5 kHz is sampled at a sampling rate $f_s$.
 The signal x(t) is reconstructed using the reconstruction filter H(f) whose magnitude response is shown below:
@@ -134,27 +135,48 @@ The minimum sampling rate $f_s$ (in kHz) for perfect reconstruction of x(t) is
 \section{SOLUTION}
 As x(t) is a band limited low-pass signal of bandwidth 5kHz.
 
-Let our signal x(t) be look like,
+Let our X(f) be look like,
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=\columnwidth]{gate_1_2.png}
+    \includegraphics[width=\columnwidth]{0.png}
 \end{figure}
 
-After sampling x(t) at a sampling rate of $f_s$, Then it signal looks like a repetitive triangular wave that repeats after $f_s$kHz.
-Then the sampled signal s(t) looks like,
+As for sampling a signal we will multiply a unit impulse train sampled at a sampling frequency with the signal. So, fourier transform of sampled signal will be the convolution of input's X(f) and delta function.
+
+After sampling x(t) at a sampling rate of $f_s$, Then it sampled signal's X(f) is,
 \begin{figure}[htp]
     \centering
-    \includegraphics[width=\columnwidth]{gate_sample.png}
-    \caption{Sampled signal}
+    \includegraphics[width=\columnwidth]{1.png}
+    \caption{Sampled signal's X(f)}
 \end{figure}
 
 \textbf{Note: Here for plotting $f_s$ has been taken as 25kHz.}
 
+Therefore, The condition for perfect reconstruction of x(t) from s(t) using filter H is,
+$$f_m\le f_H\le f_s-f_m$$
+
+Where $f_m$ is the maximum component frequency of x(t), $f_H$ is that of filter and $f_s$ is the sampling frequency.
+
+We know that $f_m$ is 5kHz,$f_H$ is 8kHz and the next sampled part signal starts at $f_s$-5 kHz.
+
+For perfect reconstruction of x(t) which has been sampled at a rate $f_s$, $$f_s-5 \ge 8$$
+So, The possible values of $f_s$ for which reconstruction of x(t) possible is 
+$$f_s \ge 13$$
+$\therefore$ The minimum sampling rate $f_s$ for perfect reconstruction of x(t) is 13kHz.
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=\columnwidth]{13.png}
+    \caption{Applying filter on sampled signal
+    \\\textbf{Note: Here for plotting $f_s$ has been taken as 13kHz.}}
+\end{figure}
+
+
 On applying the given reconstruction filter on the sampled signal looks like,
 (When $f_s$ = 25kHz)
-\begin{figure}[htp]
+\begin{figure}[!htp]
     \centering
-    \includegraphics[width=\columnwidth]{gate_fiter.png}
+    \includegraphics[width=\columnwidth]{25.png}
     \caption{Applying filter on sampled signal
     \\\textbf{Note: Here for plotting $f_s$ has been taken as 25kHz.}}
 \end{figure}
@@ -162,23 +184,11 @@ On applying the given reconstruction filter on the sampled signal looks like,
 We are observing a perfect reconstruction of x(t) is possible in the case of $f_s$=25kHz.
 
 But if we observe when $f_s$=11kHz, It is not possible to perfect reconstruction of x(t). As it looks like ,
-\begin{figure}[htp]
+\begin{figure}[!htp]
     \centering
-    \includegraphics[width=\columnwidth]{gate_filter_1.png}
+    \includegraphics[width=\columnwidth]{11.png}
     \caption{Applying filter on sampled signal
     \\\textbf{Note: Here for plotting $f_s$ has been taken as 11kHz.}}
 \end{figure}
-\newpage
-Therefore, The condition for perfect reconstruction of x(t) from s(t) using filter H is,
-$$f_m\le f_H\le f_s-f_m$$
-
-Where $f_m$ is the maximum component frequency of x(t), $f_H$ is that of filter and $f_s$ is the sampling frequency.
-
-We know the $f_m$ is 5kHz,$f_H$ is 8kHz and the next sampled part signal starts at $f_s$-5 kHz.
-
-For perfect reconstruction of x(t) which has been sampled at a rate $f_s$, $$f_s-5 \ge 8$$
-So, The possible values of $f_s$ for which reconstruction of x(t) possible is 
-$$f_s \ge 13$$
-$\therefore$ The minimum sampling rate $f_s$ for perfect reconstruction of x(t) is 13kHz.
-
+$\therefore$ we can say that The minimum sampling rate $f_s$ for perfect reconstruction of x(t) is 13kHz.
 \end{document}
