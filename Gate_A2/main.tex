@@ -170,7 +170,14 @@ A system is said to be \textbf{time invariant} if the output signal does not dep
 \begin{definition}
 A system is said to be \textbf{low-pass} if it filter the signals with a frequency lower than a selected cutoff frequency and attenuates signals with frequencies higher than the cutoff frequency. \label{newdef}
 \end{definition}
-
+\begin{definition}
+The \textbf{Duality} Property of fourier transform tells us that if $x(t)$ has a Fourier Transform $X(f)$, then if we form a new function of time that has the functional form of the transform, $X(t)$, it will have a Fourier Transform $x(-f)$. Mathematically, we can write:
+\begin{align}
+    x(t)\fourier X(f)\\
+    X(t)\fourier x(-f)
+\end{align}
+\label{duality}
+\end{definition}
 \begin{lemma}
 A Hilbert transformer is a non-causal, linear, time-invariant and non low-pass filter.
 \begin{align}
@@ -308,17 +315,28 @@ $\therefore$ Hilbert transformer is a non casual system.
 \item {\textbf{\underline{Low-pass system}}}
 
 Using \eqref{newdef} and by observing the Fig.\ref{figx3}, We can observe that the output signal consists of signal component corresponds to all frequencies i.e., there is no such cutoff frequency observed. 
-
+We know that, fourier transform of sgn(t) is
+\begin{align}
+    sgn(t)\fourier \frac{1}{j\pi f}
+\end{align}
+Now using \ref{duality}, we will get Fourier transform of $\frac{1}{\pi t}$ as
+\begin{align}
+    \frac{1}{j\pi t}\fourier sgn(-f)\\
+    h(t)=\frac{1}{\pi t}\fourier \frac{sgn(f)}{j}
+\end{align}
+\begin{align}
+    \implies H(f) = \frac{sgn(f)}{j}
+\end{align}
   \begin{figure}[!htp]
 \centering
- \includegraphics[width=\columnwidth]{b.png}
+ \includegraphics[width=\columnwidth]{b1.png}
  \caption{Amplitude v/s frequency plot of $H(f)$}
   \label{figx3}
  \end{figure}
  
   \begin{figure}[!htp]
 \centering
- \includegraphics[width=\columnwidth]{c.png}
+ \includegraphics[width=\columnwidth]{c1.png}
  \caption{Phase v/s frequency plot of $H(f)$}
 
  \end{figure}
@@ -326,7 +344,24 @@ Using \eqref{newdef} and by observing the Fig.\ref{figx3}, We can observe that t
 \newpage
 $\therefore$ We can say that the hilbert transform is \textbf{not a low-pass system}.
 \end{enumerate}
-
+\begin{table}[h!]
+\centering
+\begin{tabular}{| m{2cm}| m{5.5cm} |} 
+\hline
+\textbf{Option} & \textbf{Explanation} \\
+\hline&\\[-1em]
+Non Linear & It is Linear as it satisfies both laws of additivity and homogenity .\\[2pt]
+\hline&\\[-1em]
+Non casual& As $h(t)\ne0$ for $t<0$, it is a non casual system.\\[2pt]
+\hline&\\[-1em]
+Time varying&It is time invariant as the output of delayed input is same as the delaying the output by the same extent. \\[2pt]
+\hline&\\[-1em]
+Low-pass & We can see that there is no such cutoff frequency in H(f). so we can say that it is not a low pass system.\\
+\hline
+\end{tabular}
+\caption{Option explanations about properties of hilbert transform}
+\label{table1}
+\end{table}
 $\therefore$ Correct option is \textbf{2) Non casual system}.
 \end{proof}
 \end{document}
